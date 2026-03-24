@@ -104,3 +104,34 @@ section {
 .achievements h2 {
   margin-bottom: 20px;
 }
+/* HERO IMAGE FRAME */
+.hero-img {
+  display: inline-block;
+  /* The "Physical" Frame */
+  padding: 12px; 
+  background: #1a1d23; /* Matches your card colors */
+  border: 2px solid #3a3f47; /* Subtle outer edge */
+  border-radius: 15px;
+  
+  /* Adds depth to the frame */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+              inset 0 0 10px rgba(255, 255, 255, 0.05);
+  
+  /* Transition for a nice hover effect later */
+  transition: transform 0.3s ease;
+}
+
+.hero-img img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* Ensures your photo doesn't stretch */
+  border-radius: 8px; /* Slightly less than the frame for a nested look */
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Thin "inner" border */
+}
+
+/* Optional: Subtle lift when hovering */
+.hero-img:hover {
+  transform: translateY(-5px);
+  border-color: orange; /* The frame glows orange when you hover */
+}
