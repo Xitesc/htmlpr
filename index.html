@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mr.Pongkeit</title>
+  <title>Portfolio UI</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -20,7 +23,22 @@
       <div class="info">
         <h1>Mr. PONGKEIT HANKLANG</h1>
         <h2>System Analysis & Developer</h2>
+
         <button id="openResume" class="resume-btn">View Resume</button>
+
+        <!-- SOCIAL -->
+        <div class="socials">
+          <a href="https://www.facebook.com/hanklang.p/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/pmrpmrpmr08/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/Xitesc" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+
       </div>
     </div>
 
@@ -32,51 +50,133 @@
       <button class="tab" data-target="projects">Projects</button>
     </div>
 
-    <!-- SECTIONS -->
+    <!-- SKILLS -->
     <div id="skills" class="section active">
       <h3>Skills</h3>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Flutter, Firebase</li>
-        <li>ESP8266 / IoT Development</li>
-      </ul>
+
+      <div class="skills-grid">
+
+        <div class="skill">
+          <img src="assest/logo/HTML.png">
+          <span>HTML</span>
+        </div>
+
+        <div class="skill">
+          <img src="assest/logo/CSS.png">
+          <span>CSS</span>
+        </div>
+
+        <div class="skill">
+          <img src="assest/logo/Flutter.png">
+          <span>Flutter</span>
+        </div>
+
+        <div class="skill">
+          <img src="assest/logo/Firebase.png">
+          <span>Firebase</span>
+        </div>
+
+        <div class="skill">
+          <img src="assest/logo/MySQL.png">
+          <span>MySQL</span>
+        </div>
+
+        <div class="skill">
+          <img src="assest/logo/Python.png">
+          <span>Python</span>
+        </div>
+
+        <div class="skill">
+          <img src="assest/logo/supabase.png">
+          <span>Supabase</span>
+        </div>
+
+        <!-- NEW -->
+        <div class="skill">
+          <img src="assest/logo/eng.jpg">
+          <span>English</span>
+        </div>
+
+      </div>
     </div>
 
+    <!-- EDUCATION -->
     <div id="education" class="section">
       <h3>Education</h3>
-      <p>Your university / school here</p>
+
+      <div class="edu-card">
+        <div class="edu-left">
+          <img src="assest/logo/ku.png">
+        </div>
+
+        <div class="edu-right">
+          <h4>Kasetsart University, Kamphaeng Saen Campus</h4>
+          <p>Information Technology (Special Program)</p>
+          <span>2023 - Present</span>
+        </div>
+      </div>
     </div>
 
+    <!-- EXPERIENCE -->
     <div id="experience" class="section">
       <h3>Experience</h3>
-      <p>Your work experience here</p>
+
+      <div class="exp-card">
+
+        <div class="exp-info">
+          <h4>เจ้าหน้าที่ธุรการ</h4>
+          <p>รวบรวมและจัดเก็บเอกสาร จัดระบบข้อมูล และดูแลเอกสารภายในองค์กร</p>
+          <span>📍สวนสัตว์นครราชสีมา</span>
+        </div>
+
+        <div class="exp-gallery">
+          <img src="assest/Front.JPEG">
+          <img src="assest/Gram.JPEG">
+          <img src="assest/Sitoffice.JPEG">
+          <img src="assest/Tickets.JPEG">
+        </div>
+
+      </div>
     </div>
 
+    <!-- PROJECTS -->
     <div id="projects" class="section">
       <h3>Projects</h3>
-      <p>Your projects here</p>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h4>ระบบบริหารการเงินส่วนบุคคล</h4>
+          <p>จัดการรายรับรายจ่าย พร้อมวิเคราะห์การเงิน</p>
+          <a href="pdf/project1.pdf" download>Download PDF</a>
+        </div>
+
+        <div class="project-card">
+          <h4>ระบบจองโต๊ะอาหารออนไลน์</h4>
+          <p>ระบบจองโต๊ะผ่านเว็บ พร้อมจัดการร้านอาหาร</p>
+          <a href="pdf/project2.pdf" download>Download PDF</a>
+        </div>
+
+      </div>
     </div>
 
   </div>
 
-  <!-- RESUME MODAL -->
+  <!-- MODAL -->
   <div id="resumeModal" class="modal">
     <div class="modal-content">
-
       <span class="close">&times;</span>
 
-      <img src="assest/maresume.png" class="resume-img" alt="Resume">
+      <iframe src="pdf/resume.pdf" class="resume-frame"></iframe>
 
       <a href="pdf/resume.pdf" download class="download-btn">
         Download PDF
       </a>
-
     </div>
   </div>
 
   <!-- JS -->
   <script>
-    // Tabs
     const tabs = document.querySelectorAll('.tab');
     const sections = document.querySelectorAll('.section');
 
@@ -90,24 +190,20 @@
       });
     });
 
-    // Resume Modal
     const modal = document.getElementById("resumeModal");
     const openBtn = document.getElementById("openResume");
     const closeBtn = document.querySelector(".close");
 
-    openBtn.onclick = () => {
-      modal.style.display = "block";
-    };
-
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
-    };
+    openBtn.onclick = () => modal.classList.add("show");
+    closeBtn.onclick = () => modal.classList.remove("show");
 
     window.onclick = (e) => {
-      if (e.target == modal) {
-        modal.style.display = "none";
-      }
+      if (e.target === modal) modal.classList.remove("show");
     };
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") modal.classList.remove("show");
+    });
   </script>
 
 </body>
